@@ -44,6 +44,10 @@ h1, h2, h3, h4 {
     color: #003b8a;
 }
 
+.page-header h1 {
+    margin-top: 1.25em;
+}
+
 p {
     margin-top: 0;
     color: #121212;
@@ -379,6 +383,7 @@ ul.recentlyhit {
         }
     }
 }
+
 @media screen and (min-width: 1200px) {
     .moduletable.breadcrumbs {
         padding-top: 0;
@@ -433,11 +438,16 @@ ul.recentlyhit {
     }
 }
 
-// CTA section 🙂
+// CTA boxes 🙂
 // -----------------------------------------------------------------------------
 
 @cta-background: #f1f0f0;
 .custom.cta-call, .custom.cta-email {
+    &:before, &:after {
+        .fontawesome;
+        position: absolute;
+        line-height: 1em;
+    }
     background-color: @cta-background;
     padding: 2em 1.5em;
     position: relative;
@@ -448,19 +458,14 @@ ul.recentlyhit {
 }
 .custom.cta-call {
     margin-bottom: 1em; // mobile only
-    &::before, &::after {
-        .fontawesome;
-        position: absolute;
-        line-height: 1em;
-    }
     // big phone
-    &::before {
+    &:before {
         content: "\f095";
         top: 54%;
         transform: translateY(-50%);
         right: 5%;
         color: #a9a8a8;
-        font-size: 8em;
+        font-size: 128px;
     }
     p {
         font-size: 1.8em;
@@ -476,21 +481,15 @@ ul.recentlyhit {
     }
 }
 .custom.cta-email {
-    &::before, &::after {
-        .fontawesome;
-        position: absolute;
-        line-height: 1em;
-    }
     // big envelope
-    &::before {
+    &:before {
         content: "\f0e0";
         top: 47%;
         transform: translateY(-50%);
         right: 8%;
         color: #a9a8a8;
-        font-size: 6em;
+        font-size: 96px;
     }
-
     p {
         font-size: 1.8em;
         line-height: 1em;
@@ -517,36 +516,26 @@ ul.recentlyhit {
 }
 @media screen and (min-width: 1200px) {
     .custom.cta-call, .custom.cta-email {
-        position: relative;
+        font-size: 1em;
         padding: 4.157em 6.25em;
-        background-color: @cta-background;
-        p {
-            position: relative;
-            z-index: 1;
-        }
     }
     .custom.cta-call {
         margin-right: 2%;
-        &::before, &::after {
-            .fontawesome;
-            position: absolute;
+        // small phone
+        &:after {
             content: "\f095";
-            line-height: 1em;
+            bottom: -8%;
+            left: 5%;
+            color:#e3e2e2;
+            font-size: 128px;
         }
         // big phone
-        &::before {
+        &:before {
             top: 54%;
             transform: translateY(-50%);
             right: 5%;
             color: #a9a8a8;
-            font-size: 14em;
-        }
-        // small phone
-        &::after {
-            bottom: -8%;
-            left: 5%;
-            color:#e3e2e2;
-            font-size: 8em;
+            font-size: 224px;
         }
         p {
             font-size: 2.250em;
@@ -561,27 +550,21 @@ ul.recentlyhit {
             }
         }
     }
-    .custom.cta-email{
-        &::before, &::after {
-            .fontawesome;
-            position: absolute;
-            content: "\f0e0";
-            line-height: 1em;
-        }
-        // big envelope
-        &::before {
-            top: 47%;
-            transform: translateY(-50%);
-            right: 8%;
-            color: #a9a8a8;
-            font-size: 13em;
-        }
+    .custom.cta-email {
         // small envelope
-        &::after {
+        &:after {
+            content: "\f0e0";
             bottom: -4%;
             left: 5%;
             color: #e3e2e2;
             font-size: 8.5em;
+        }
+        // big envelope
+        &:before {
+            top: 47%;
+            transform: translateY(-50%);
+            right: 8%;
+            font-size: 200px;
         }
         p {
             font-size: 2.250em;
@@ -591,9 +574,6 @@ ul.recentlyhit {
         p.email {
             padding-top: 2rem;
             font-size: 1.5em;
-            a {
-                color: #031f46;
-            }
         }
     }
 }
