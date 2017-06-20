@@ -1,0 +1,370 @@
+// Footer Styles
+
+// Configure colour and sizes etc. then set the layout style.
+// All font-sizes are defined here at full (desktop) size and scaled down for
+// mobile.
+
+// General variables
+// -----------------------------------------------------------------------------
+
+@footer-bg:   #003b8a;
+@footer-bg2:  #053576;
+@footer-text: #fff;
+
+// Menu / Tagline / Enquiry button 🙂
+// -----------------------------------------------------------------------------
+    // mobile
+    #bottomwrap {
+        width: 100%;
+        background-color: @footer-bg;
+        padding: 3.125em 0; // 50px pad
+    }
+// -----------------------------------------------------------------------------
+
+// Menu 🙂
+// -----------------------------------------------------------------------------
+    // mobile
+    #bottom1 {
+        ul {
+            .list-reset;
+            margin: 0;
+            columns: 2;
+            color: @footer-text;
+            font-size: 1.125em;
+            padding-bottom: 1.5em;
+            li {
+                a {
+                    display: inline-block;
+                    font-weight: normal;
+                    color: #fff;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    padding: 0 0 0.75em 0;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 600px) {
+        #bottom1 {
+            ul {
+                columns: 3;
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        #bottom1 {
+            width: 50%;
+            float: left;
+            clear: none;
+            ul {
+                padding-bottom: 0;
+                columns: 2;
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #bottom1 {
+            width: 40%;
+            float: left;
+            clear: none;
+            ul {
+                columns: 3;
+                padding-bottom: 0;
+                li {
+                    a {
+                        padding: 1rem 0;
+                    }
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+// Tagline 🙂
+// -----------------------------------------------------------------------------
+    // mobile
+    #bottom2 {
+        width: 100%;
+        text-align: center;
+        max-width: none;
+        padding-bottom: 2em;
+        p {
+            color: @footer-text;
+            font-size: 1.2em; // 1.5em
+            line-height: 1.500em;
+            font-weight: @font-semibold;
+        }
+    }
+    @media screen and (min-width: 800px) {
+        #bottom2 {
+            width: 50%;
+            float: left;
+            clear: none;
+            position: relative;
+            padding-bottom: 0;
+            p {
+                padding-bottom: 1em;
+                text-align: left;
+                font-size: 1.5em;
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #bottom2 {
+            height: 175px; // needed? flexbox fix?
+            width: 35%;
+            float: left;
+            clear: none;
+            position: relative;
+            padding-bottom: 0;
+            p {
+                .vertical-center;
+                text-align: left;
+                font-size: 1.5em;
+                padding: 0;
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+// Enquiry button 🙂
+// -----------------------------------------------------------------------------
+    // mobile
+    #bottom3 {
+        padding-bottom: 1em;
+        width: 100%;
+        max-width: none;
+        padding-bottom: 0;
+        a {
+            .white-button;
+            text-align: center;
+            display: block;
+            max-width: 262px;
+            margin: 0 auto;
+            padding: 0.695em 1.223em; // 262 x 50px
+            &::after {
+                .fontawesome;
+                content: "\f0e0";
+                padding-left: 2.688em;
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        #bottom3 {
+            width: 50%;
+            float: left;
+            padding: 1em 0;
+            a {
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #bottom3 {
+            height: 175px; // needed? flexbox fix?
+            width: 25%;
+            float: left;
+            clear: none;
+            position: relative;
+            text-align: right;
+            a {
+                .vertical-center;
+                right: 0 !important;
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+// NCB marking logo and socials / Copyright etc. 🙂
+// -----------------------------------------------------------------------------
+    #footerwrap {
+        background-color: @footer-bg2;
+        margin-bottom: 0;
+        .internal-container {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+    #footer, #footer-1 {
+        p, ul, a {
+            color: @footer-text;
+            font-size: 1em;
+            font-weight: normal;
+        }
+    }
+// -----------------------------------------------------------------------------
+
+// NCB marking logo and socials 🙂
+// -----------------------------------------------------------------------------
+    // mobile
+    #footer {
+        width: 100%;
+        max-width: none;
+        color: @footer-text;
+        padding: 1.5em ; //2.188em 0; // 35px
+        background-color: @footer-bg2;
+        margin-bottom: 0;
+        .moduletable {
+            max-width: @containerMaxWidth;
+            width: @containerWidth;
+            margin: 0 auto;
+        }
+        .left {
+            text-align: center;
+            img {
+                width: auto;
+                margin: 0 auto;
+                margin-bottom: 1.5em;
+            }
+        }
+        .right {
+            text-align: center;
+        }
+        p {
+            // follow us
+            display: inline;
+            padding-right: 1em;
+        }
+        ul {
+            .list-reset;
+            display: inline-block;
+            margin: 0;
+            li {
+                display: inline-block;
+                padding: 0 0.75rem;
+                font-size: 2em;
+                line-height: 1em;
+                color: @footer-text;
+                &:last-child {
+                    padding-right: 0;
+                }
+                a {
+                    &:hover {
+                        // for colours see: variables.less
+                        i {
+                            transform: scale(1.3);
+                            transition: all 0.2s;
+                        }
+                        i.fa-facebook {
+                            color: @facebook;
+                            -webkit-text-stroke: 0.5px #fff;
+                        }
+                        i.fa-google-plus {
+                            color: @google-plus;
+                        }
+                        i.fa-youtube {
+                            color: @youtube-play;
+                        }
+                        i.fa-linkedin {
+                            color: @linkedin;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        #footer {
+            display: inline-block;
+            width: 100%;
+            .left {
+                float: left;
+                clear: none;
+                img {
+                    margin: 0;
+                }
+            }
+            .right {
+                float: right;
+                clear: none;
+                height: 40px;
+            }
+            ul {
+                li {
+                    padding: 0 1.5rem;
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+// Copyright / Footer menu / ExtraMile credit 🙂
+// -----------------------------------------------------------------------------
+    #footer-1 {
+        display: inline-block;
+        width: 100%;
+        background-color: @footer-bg;
+        margin-bottom: 0;
+        padding: 2.5em 0; // 40px pad
+        .moduletable {
+            width: @containerWidth;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        p {
+            width: 100%;
+            margin-bottom: 1em; // mobile only
+            span.emc {
+                font-weight: @font-bold;
+            }
+            a {
+                span.emc {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    color: @extramile-green;
+                }
+            }
+        }
+        ul {
+            .list-reset;
+            margin: 0 0 1em 0; // mobile only
+            li {
+                padding: 0.5em;
+                a:hover {
+                    text-decoration: underline;
+                }
+
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        #footer-1 {
+            ul {
+                li {
+                    padding: 0;
+                    display: inline;
+                    margin: 0 2%;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #footer-1 {
+            p {
+                margin-bottom: 0;
+                &.copyright {
+                    width: 28%;
+                    float: left;
+                    clear: none;
+                }
+                &.powered-by {
+                    text-align: right;
+                    width: 22%;
+                    float: left;
+                    clear: none;
+                }
+            }
+            ul {
+                margin-bottom: 0;
+                text-align: center;
+                width: 50%;
+                float: left;
+                clear: none;
+                li {
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------

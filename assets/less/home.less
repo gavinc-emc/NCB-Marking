@@ -1,0 +1,825 @@
+// Homepage Styles
+
+// Configure colour and sizes etc. then set the layout style.
+// All font-sizes are defined here at full (desktop) size and scaled down for
+// mobile.
+
+// General variables
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+body.home {
+
+// Banner
+// -----------------------------------------------------------------------------
+    #banner {
+        // mobile
+        display: inline-block;
+        width: 100%;
+        padding: 1em 0;
+        .zeninner {
+            width: 100%;
+            .zenimage {
+                position: relative;
+                img {
+                    margin-bottom: 0;
+                    box-shadow: none;
+                }
+                &:after {
+                    // place transp. grid over banner image
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-image: url('../images/banner-overlay.png');
+                    background-size: cover;
+                    content: '';
+                    height: 100%;
+                    width: 100%;
+                    z-index: 1;
+                }
+            }
+            .zentext {
+                width: 100%;
+                h2 {
+                    padding: 1em;
+                    margin: 0;
+                    text-align: center;
+                    font-size: 1.3em;
+                    line-height: 1.2em;
+                    font-weight: @font-semibold;
+                    color: #003b8a;
+                }
+                p {
+                    // hide intro text on mobile
+                    display: none;
+                }
+                ul {
+                    list-style: none;
+                    padding-left: 0;
+                    li {
+                        width: 100%;
+                        margin-bottom: 0.5em;
+                        &:first-child {
+                            // Discover more
+                            margin-right: 4%;
+                            a {
+                                .blue-button;
+                                padding-left: 1.5em;
+                                padding-right: 1.5em;
+                                width: 100%;
+                                &:hover {
+                                    opacity: 0.8;
+                                }
+                            }
+                        }
+                        &:nth-child(2) {
+                            // Enquire now
+                            a {
+                                .grey-button;
+                                padding-left: 1.5em;
+                                padding-right: 1.5em;
+                                width: 100%;
+                                &:hover {
+                                    opacity: 0.7;
+                                }
+                                &::after {
+                                    .fontawesome;
+                                    content: "\f0e0";
+                                    font-size: 0.75em;
+                                    padding-left: 1em;
+                                    color: #003b8a;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .flex-viewport {
+            margin-bottom: 20px;
+        }
+        .slide-controller {
+            display: block;
+            margin: 0 auto !important;
+            width: 100%;
+            margin: 1em 0 0 0;
+            padding: 0;
+            max-width: 250px;
+            float: none !important;
+            .slidenavdiscs {
+                padding: 0;
+                ul.slidenav {
+                    width: auto;
+                    padding: 0 16px 0 62px;
+                    li {
+                        background-image: none;
+                        border-radius: 50%;
+                        height: 18px;
+                        width: 18px;
+                        background-color: #ececec;
+                        &.active {
+                            background-color: #c4c3c3;
+                        }
+                        margin: 0.4375em;
+                    }
+                }
+            }
+        }
+        ul.flex-direction-nav {
+            li {
+                position: absolute;
+                top: 7px;
+                a {
+                    box-shadow: none !important;
+                }
+                span {
+                    display: none;
+                }
+                &:first-child {
+                    // previous
+                    left: 0;
+                }
+                &:last-child {
+                    // next
+                    right: 0;
+                }
+            }
+            a.flex-prev {
+                float: left;
+                border: 0;
+                width: 42px;
+                height: 19px;
+                background: url('../images/left-arrow.png');
+            }
+            a.flex-next {
+                border: 0;
+                width: 42px;
+                height: 19px;
+                background: url('../images/right-arrow.png');
+            }
+        }
+    }
+    @media screen and (min-width: 600px) {
+        #banner {
+            .zeninner {
+                .zentext {
+                    ul {
+                        li {
+                            width: 48%;
+                            float: left;
+                            clear: none;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 950px) {
+        // desktop
+        #banner {
+            padding-top: 3.625em;
+            padding-bottom: 12em;
+            .zeninner {
+                .zenimage {
+                    width: 62%;
+                    float: right;
+                    img {
+                        box-shadow: none;
+                        margin-bottom: 0;
+                    }
+                }
+                .zentext {
+                    float: left;
+                    clear: none;
+                    width: 34%;
+                    margin-right: 4%;
+                    padding-top: 0;
+                    h2 {
+                        text-align: left;
+                        padding-left: 0;
+                        margin-top: 0;
+                        padding-top: 0;
+                    }
+                    ul {
+                        .list-reset;
+                        margin-top: 0;
+                        padding-top: 0;
+                        font-size: 1em;
+                        li {
+                            // buttons full width at this res.
+                            float: none;
+                            width: 100%;
+                            &:first-child {
+                                margin-bottom: 5px;
+                                // Discover more
+                                a {
+                                    padding: 0.938em 2.605em;
+                                }
+                            }
+                            &:nth-child(2) {
+                                // Enquire now
+                                a {
+                                    padding: 0.938em 2.261em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .flex-viewport {
+                margin-bottom: 0;
+            }
+            .slide-controller {
+                width: auto;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                margin: 0;
+                padding: 0;
+                .slidenavdiscs {
+                    padding: 0;
+                    ul.slidenav {
+                        width: auto;
+                        padding: 0 16px 0 62px;
+                        li {
+                            background-image: none;
+                            border-radius: 50%;
+                            height: 18px;
+                            width: 18px;
+                            background-color: #ececec;
+                            &.active {
+                                background-color: #c4c3c3;
+                            }
+                            margin: 0.4375em;
+                        }
+                    }
+                }
+            }
+            ul.flex-direction-nav {
+                li {
+                    position: absolute;
+                    top: 7px;
+                    a {
+                        box-shadow: none !important;
+                    }
+                    span {
+                        display: none;
+                    }
+                    &:first-child {
+                        // previous
+                        left: 0;
+                    }
+                    &:last-child {
+                        // next
+                        right: 0;
+                    }
+                }
+                a.flex-prev {
+                    float: left;
+                    border: 0;
+                    width: 42px;
+                    height: 19px;
+                    background: url('../images/left-arrow.png');
+                }
+                a.flex-next {
+                    border: 0;
+                    width: 42px;
+                    height: 19px;
+                    background: url('../images/right-arrow.png');
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1400px) {
+        // desktop
+        #banner {
+            .zeninner {
+                .zentext {
+                    h2 {
+                        font-size: 2.125em; // 34px
+                        line-height: 1.176em; // 40px
+                        padding-top: 0.882em; // 30px @ 34px font
+                        padding-right: 0;
+                        padding-bottom: 0.75em;
+                    }
+                    ul {
+                        li {
+                            width: 48%;
+                            float: left;
+                            clear: none;
+                            &:first-child {
+                                width: auto;
+                            }
+                            &:nth-child(2) {
+                                width: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1500px) {
+        // desktop
+        #banner {
+            .zeninner {
+                .zentext {
+                    p {
+                        display: block;
+                        margin-bottom: 2.813em;
+                    }
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+// Do you have an identification or traceability enquiry?
+// -----------------------------------------------------------------------------
+    #grid1wrap {
+        // mobile
+        background-color: #f0f0f0;
+        padding-bottom: 2em;
+    }
+    #grid1 {
+        // mobile
+        width: 100%;
+        margin-bottom: 2em;
+        background-image: linear-gradient(to bottom, #053576, #053576 49%, #003b8a 49%);
+    }
+    @media screen and (min-width: @bp_mobileMenu) {
+        // desktop
+        #grid1wrap {
+            padding-bottom: 4.875em;
+        }
+        #grid1 {
+            margin-bottom: 4.250em;
+        }
+    }
+    @media screen and (min-width: 660px) {
+        #grid1 {
+            // show globe
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 52%, #003b8a 52%);
+            background-repeat: no-repeat;
+            background-position: 109% -2%;
+        }
+    }
+    @media screen and (min-width: 688px) {
+        #grid1 {
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 55%, #003b8a 55%);
+        }
+    }
+    @media screen and (min-width: 800px) {
+        #grid1 {
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 50%, #003b8a 50%);
+        }
+    }
+    @media screen and (min-width: 950px) {
+        #grid1 {
+            // bump intro up into banner
+            margin-top: -140px;
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        #grid1 {
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 57%, #003b8a 57%);
+        }
+    }
+    @media screen and (min-width: 1100px) {
+        #grid1 {
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 60%, #003b8a 60%);
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #grid1 {
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 57%, #003b8a 57%);
+        }
+    }
+    @media screen and (min-width: 1450px) {
+        #grid1 {
+            background-image:
+                url('../images/globe-bg.png'),
+                linear-gradient(to bottom, #053576, #053576 60%, #003b8a 60%);
+        }
+    }
+    // Traceability enquiry box 🙂
+    // -------------------------------------------------------------------------
+    .moduletable.home-traceability-enquiry {
+        // mobile first
+        padding: 2.5em 2em;
+        h2 {
+            color: #fff;
+            font-weight: @font-semibold;
+            font-size: 1.325em;
+            margin-top: 0;
+        }
+        #bfPage1 {
+            .bfElemWrap {
+                // full width form
+                width: 100%;
+                max-width: none;
+                label {
+                    font-size: 0.9em;
+                    margin-bottom: 0.4em;
+                }
+                input {
+                    width: 100%;
+                    max-width: none;
+                    font-size: 1em;
+                    font-weight: @font-regular;
+                    border-bottom: 1px solid white;
+                    &::placeholder {
+                        color: white;
+                    }
+                    margin-bottom: 1em;
+                }
+            }
+            // breezing forms page 1
+            .form-actions {
+                // button on left
+                float: left;
+                clear: none;
+                button {
+                    // send enquiry button
+                    .white-button;
+                    font-size: 0.9em;
+                    color: #121212;
+                    padding: 1.063em 1.5em; // 230 x 57px
+                    &::after {
+                        .fontawesome;
+                        content: "\f0e0";
+                        padding-left: 4.202em;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .moduletable.home-traceability-enquiry {
+            padding: 3em 2.25em;
+            h2 {
+                font-size: 1.6em;
+            }
+            #bfPage1 {
+                .bfElemWrap {
+                    // inputs side-by-side
+                    float: left;
+                    clear: none;
+                    width: 46%;
+                    // gap betwen inputs
+                    margin-right: 4%;
+                    label {
+                        font-size: 1em;
+                    }
+                    input {
+                        font-size: 1.125em;
+                    }
+                }
+            }
+            .form-actions {
+                button {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        .moduletable.home-traceability-enquiry {
+            padding: 3.25em 2.25em;
+            h2 {
+                font-size: 1.9em;
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .moduletable.home-traceability-enquiry {
+            padding: 4em 2.5em;
+            h2 {
+                font-size: 2.125em;
+            }
+            #bfPage1 {
+                .bfElemWrap {
+                    width: 34%;
+                    // gap betwen inputs
+                    margin-right: 3%;
+                }
+                .bfClearfix:after {
+                    // allow submit button up and to the right
+                    clear: none !important;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1400px) {
+        .moduletable.home-traceability-enquiry {
+            padding: 4em 2.5em;
+            h2 {
+                font-size: 2.125em;
+            }
+            #bfPage1 {
+                .bfElemWrap {
+                    width: 37%;
+                }
+            }
+        }
+    }
+    // Traceability contacts box 🙂
+    // -------------------------------------------------------------------------
+    .moduletable.home-traceability-contacts {
+        // mobile first
+        padding: 2.5em 2em;
+        ul {
+            // disable default list dots
+            list-style: none;
+            padding-left: 0;
+            display: inline-block;
+            width: 100%;
+            margin: 0;
+            li {
+                font-size: 1em;
+                font-weight: @font-semibold;
+                width: 100%; // mobile only
+                max-width: none;
+                margin-bottom: 0.5em;
+                > p {
+                    color: #fff;
+                    display: block;
+                    font-size: 0.875em; // 14px @ 16px
+                    font-weight: @font-regular;
+                    text-transform: uppercase;
+                    margin-bottom: 0.5em;
+                    &.tel, &.fax {
+                        font-weight: @font-semibold;
+                        font-size: 1.625em; //26px @ 16px
+                    }
+                    &.email, &.location {
+                        font-weight: @font-semibold;
+                        font-size: 1em;
+                    }
+                    a {
+                        color: #fff;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 660px) {
+        .moduletable.home-traceability-contacts {
+            ul {
+                li {
+                    // display items horizontally
+                    width: 49%;
+                    float: left;
+                    clear: none;
+                    &:first-child, &:nth-child(3) {
+                        margin-right: 2%;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .moduletable.home-traceability-contacts {
+            padding: 3em 2.25em;
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        .moduletable.home-traceability-contacts {
+            ul {
+                li {
+                    float: left;
+                    clear: none;
+                    margin-right: 2%;
+                    margin-bottom: 0;
+                    width: 15%;
+                    &:nth-child(3) {
+                        width: 33%;
+                    }
+                    &:nth-child(4) {
+                        width: 30%;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        .moduletable.home-traceability-contacts {
+            padding: 3em 2.5em;
+            ul {
+                li {
+                    width: 20%;
+                    &:nth-child(3) {
+                        width: 23%;
+                    }
+                    &:nth-child(4) {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+
+
+// Specialist marking equipment section 🙂
+// -----------------------------------------------------------------------------
+    .moduletable.home-marking-equipment {
+        span {
+            font-weight: @font-superbold;
+        }
+        h2 {
+            font-size: 1em;
+            font-weight: @font-semibold;
+            color: #838383;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 1.5em;
+            line-height: 1.3em;
+            max-width: 75%;
+            color: #003b8a;
+            font-weight: @font-semibold;
+            margin: 0;
+            margin-bottom: 0.75em;
+        }
+        p {
+            font-size: 1em;
+            padding-bottom: 2em;
+        }
+        a.learn-more {
+            .blue-button;
+            padding: 0.94em 2.831em;
+            margin-bottom: 2em;  // mobile only
+        }
+    }
+    @media screen and (min-width: 500px) {
+        .moduletable.home-marking-equipment {
+            h3 {
+                font-size: 2.125em;
+            }
+            p {
+                margin-right: 2em;
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .moduletable.home-marking-equipment {
+            width: 54%;
+            float: left;
+            h3 {
+                font-size: 2.125em;
+            }
+        }
+    }
+    .moduletable.home-marking-equipment-images {
+        img {
+            // images side by side
+            width: 49.5%;
+            float: right;
+            clear: none;
+            margin-bottom: 0;
+            &:first-child {
+                margin-left: 1%;
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .moduletable.home-marking-equipment-images {
+            width: 46%;
+            float: left;
+            clear: none;
+        }
+    }
+// -----------------------------------------------------------------------------
+
+    #grid2wrap {
+        // mobile
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    @media screen and (min-width: @bp_mobileMenu) {
+        // desktop
+        #grid2wrap {
+            padding-top: 3.625em;
+            padding-bottom: 4.25em;
+        }
+    }
+    #grid5, #grid6, #grid7 {
+        width: 100%;
+    }
+
+// Search our products section
+// -----------------------------------------------------------------------------
+    #grid6 {
+        margin-bottom: 2em;
+    }
+    @media screen and (min-width: @bp_mobileMenu) {
+        #grid6 {
+            margin-bottom: 4em;
+        }
+    }
+    // mobile
+    .home-search-products {
+        text-align: center;
+        h2 {
+            // Search our products by...
+            font-size: 1.4em;
+            color: #121212;
+            font-weight: @font-regular;
+            text-align: center;
+            margin: 0;
+        }
+        ul {
+            // ind/type/func buttons
+            .list-reset;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 2em;
+            li {
+                font-weight: @font-semibold;
+                color: black;
+                max-width: 12em;
+                margin: 0 auto;
+                padding: 1.5em 2em;
+                border: 1px solid #f0f0f0;
+                border-left: 5px solid #f0f0f0;
+                margin-bottom: 0.2em;
+                &:hover {
+                    color: #003b8a;
+                    border-left: 5px solid #003b8a;
+                    cursor: pointer;
+                }
+                &.active {
+                    cursor: not-allowed;
+                    color: #003b8a;
+                    border-left: 5px solid #003b8a;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .home-search-products {
+            h2 {
+                font-size: 2.125em;
+            }
+            ul {
+                // center the list
+                width: 40%;
+                margin: 0 auto;
+                li {
+                    // reset mobile styles
+                    margin-bottom: 0;
+                    margin-bottom: 3.125em; // 50px
+                    //
+                    // display horizontally
+                    float: left;
+                    clear: none;
+                    display: inline-block;
+                    width: 31%;
+                    max-width: none;
+                    text-align: center;
+                    margin-right: 3.5%;
+                    padding: 2em;
+                    border: none;
+                    border-bottom: 3px solid #f0f0f0;
+                    &:hover {
+                        // undo mobile styles
+                        border-left: none;
+                        color: #003b8a;
+                        border-bottom: 3px solid #003b8a;
+                    }
+                    &.active {
+                        border-left: none;
+                        border: none;
+                        border-bottom: 3px solid #003b8a;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+}

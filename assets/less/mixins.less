@@ -1,0 +1,49 @@
+.fontawesome {
+    display: inline-block;
+    font-family: fontawesome;
+}
+.white-button {
+    display: inline-block;
+    font-size: 1.125em;
+    color: #121212;
+    font-weight: bold;
+    background-color: #fff;
+    &::after {
+        color: #003b8a;
+    }
+}
+.blue-button {
+    display: inline-block;
+    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
+    background-color: #003b8a;
+    padding: .75em 2.625em;
+}
+.grey-button {
+    display: inline-block;
+    font-size: 1em;
+    color: #121212;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    padding: .75em 2.625em;
+}
+.vertical-center {
+    // set container to position: relative first
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.list-reset {
+    list-style: none;
+    padding-left: 0;
+}
+.id(@color: red) {
+    border: 1px solid @color;
+}
+.facebook-icon   { content: "\f09a" }
+.linkedin-icon   { content: "\f0e1" }
+.googleplus-icon { content: "\f0d5" }
+.youtube-icon    { content: "\f167" }
+.youtube2-icon   { content: "\f16a" }
+.twitter-icon    { content: "\f099" }

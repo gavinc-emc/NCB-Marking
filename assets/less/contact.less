@@ -1,0 +1,322 @@
+// Contact Us Styles
+
+// Configure colour and sizes etc. then set the layout style.
+// All font-sizes are defined here at full (desktop) size and scaled down for
+// mobile.
+
+// General variables
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+body.contact-us {
+
+// Map
+// -----------------------------------------------------------------------------
+    #main {
+        .moduletable.contact-map {
+            margin-top: 1em; // 16px
+            .custom, .custom iframe {
+                // full width map
+                width: 100%;
+            }
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        #main {
+            .moduletable.contact-map {
+                margin-top: 2em; // 32px
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+
+// Titles
+// -----------------------------------------------------------------------------
+    .item-page {
+        padding-top: 1em; // 16px
+        h1 {
+            margin-top: 0;
+            font-size: 2.125em; // 34px
+            line-height: 1.176em; // 40px @ 43px
+            font-weight: @font-regular;
+            color: #003b8a;
+        }
+        p {
+            color: #121212;
+            font-size: 1.125em; // 34px
+            margin-bottom: 2em;
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        .item-page {
+            padding-top: 2em; // 32px
+            // desktop
+                margin-bottom: -8.750em;
+            //
+        }
+    }
+// -----------------------------------------------------------------------------
+
+
+// Form
+// -----------------------------------------------------------------------------
+    .form {
+        width: 100%;
+        float: none;
+        background-color: #053576;
+        padding: 1.563em; // 25px @ 16px
+        h2 {
+            margin-top: 0;
+            font-size: 1.625em; // 26px
+            line-height: 1.308em; // 34px @ 26px
+            font-weight: @font-regular;
+            color: #fff;
+            margin-bottom: 1.385em; // 36px @ 26px
+        }
+        p.thanks {
+            color: #fff;
+        }
+        #bfPage1 {
+            .bfElemWrap {
+                // full width form
+                width: 100%;
+                max-width: none;
+                label {
+                    font-size: 1em; // 16px
+                    //line-height: 1.938em; // 31px
+                    font-weight: @font-semibold;
+                    color: #b5cbe8;
+                    margin-bottom: 0.5em;
+                }
+                input {
+                    width: 100%;
+                    max-width: none;
+                    font-size: 1.125em; // 18px
+                    line-height: 1.722em; //31px @ 18px
+                    font-weight: @font-regular;
+                    border-bottom: 1px solid white;
+                    &::placeholder {
+                        color: white;
+                    }
+                    margin-bottom: 2em;
+                }
+                textarea {
+                    font-size: 1em; // 16px
+                    line-height: 1.938em; // 40px @ 16px
+                    width: 100%;
+                    max-width: none;
+                    height: 6em;
+                    resize: none;
+                    border-bottom: 1px solid #fff;
+                }
+            }
+            // breezing forms page 1
+            .form-actions {
+                padding-top: 2em;
+                button {
+                    // send enquiry button
+                    .white-button;
+                    font-size: 1em;
+                    color: #121212;
+                    padding: 1.063em 1.5em; // 230 x 57px
+                    &::after {
+                        .fontawesome;
+                        content: "\f0e0";
+                        padding-left: 4.202em;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1000px) {
+        .flex {
+            display: flex; // match heights of blue boxes
+        }
+        .form {
+            background-image: url('../images/envelope-bg.png');
+            background-repeat: no-repeat;
+            background-position: bottom 0 left 4.5em;
+            width: 67%;
+            float: left;
+            clear: none;
+            padding: 3.125em; // 50px @ 16px
+            #bfPage1 {
+                #bfElemWrap35, #bfElemWrap37 {
+                    // Your name
+                    width: 48%;
+                    float: left;
+                    clear: none;
+                    margin-right: 4%;
+                }
+                #bfElemWrap36, #bfElemWrap38  {
+                    // Your email
+                    width: 48%;
+                    float: left;
+                    clear: none;
+                }
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+
+
+// Details
+// -----------------------------------------------------------------------------
+    .details {
+            width: 100%;
+            float: none;
+            padding: 1.563em; // 25px @ 16px
+            background-color: #003b8a;
+            h2 {
+                margin-top: 0;
+                font-size: 1.625em; // 26px
+                line-height: 1.308em; // 34px @ 26px
+                margin-bottom: 1.385em; // 36px
+                font-weight: @font-regular;
+                color: #fff;
+            }
+            p {
+                font-size: 0.875em; // 14px
+                //line-height: 2.571em; // 36px @ 14px
+                margin-bottom: 0; // 10px @ 14px
+                font-weight: @font-bold;
+                color: #b5cbe8;
+                text-transform: uppercase;
+            }
+            p.phone {
+                font-size: 1.625em; // 26px
+                line-height: 1.385em; // 36px @ 26px
+                margin-bottom: 1.385em; // 36px @ 26px
+                a {
+                    font-weight: @font-regular;
+                    color: #fff;
+                    span {
+                        font-weight: @font-bold;
+                    }
+                }
+            }
+            p.fax {
+                font-size: 1.625em; // 26px
+                line-height: 1.385em; // 36px @ 26px
+                margin-bottom: 1.385em; // 36px @ 26px
+                font-weight: @font-regular;
+                color: #fff;
+            }
+            p.email {
+                font-size: 1.375em; // 22px
+                line-height: 1.409em; // 31px @ 22px
+                margin-bottom: 2em; // 43px @ 22px
+                a {
+                    text-transform: initial;
+                    font-weight: @font-regular;
+                    color: #fff;
+                }
+            }
+            p.location {
+                font-size: 1.125em; // 18px
+                line-height: 1.444em; // 26px @ 18px
+                margin-bottom: 2.5em; // 45px @ 18px
+                font-weight: @font-regular;
+                color: #fff;
+                text-transform: initial;
+                span {
+                    font-weight: @font-bold;
+                }
+            }
+            ul {
+                .list-reset;
+                display: block;
+                margin: 0 auto;
+                li {
+                    display: inline-block;
+                    font-size: 1.750em; // 28px
+                    line-height: 1.286em; // 36px @ 28px
+                    &:last-child a {
+                        padding-right: 0;
+                    }
+                    a {
+                        color: #fff;
+                        padding-right: 1.4em;
+                        &:hover {
+                            // for colours see: variables.less
+                            i {
+                                transform: scale(1.3);
+                                transition: all 0.2s;
+                            }
+                            i.fa-facebook {
+                                color: @facebook;
+                                -webkit-text-stroke: 0.5px #fff;
+                            }
+                            i.fa-twitter {
+                                color: @twitter;
+                            }
+                            i.fa-youtube-play {
+                                color: @youtube-play;
+                            }
+                            i.fa-linkedin {
+                                color: @linkedin;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    @media screen and (min-width: 1000px) {
+        .details {
+            padding: 3.125em; // 50px
+            width: 33%;
+            float: left;
+            clear: none;
+            background-image: url('../images/globe-bg.png');
+            background-repeat: no-repeat;
+            background-position: bottom -320px right -215px;
+        }
+    }
+// -----------------------------------------------------------------------------
+
+
+// Products you have viewed recently...
+// -----------------------------------------------------------------------------
+    #grid2wrap {
+        background-color: #f0f0f0;
+        padding-top: 7.5em; // 120px
+        padding-bottom: 7.5em;
+    }
+    #grid5 {
+        h1, h2, h3, h4 {
+            margin-top: 0;
+            font-size: 2.125em; // 34px
+            line-height: 1.176em; // 40px @ 43px
+            font-weight: @font-regular;
+            color: #121212;
+        }
+    }
+    ul.recentlyhit {
+        .list-reset;
+        .rh-item {
+            div.rh-item-image {
+                float: none;
+                a {
+                    display: block;
+                }
+                width: 100%;
+            }
+            .rh-item-text {
+                .rh-item-title {
+                    margin-top: 0.727em; // 16px @ 22px
+                    display: block;
+                    font-size: 1.375em; // 22px;
+                    font-weight: bold;
+                    color: #121212;
+                }
+            }
+            .button {
+                margin-top: 1em;
+                .blue-button;
+                padding: 1.094em 2.834em; // 190 x 57 px
+            }
+        }
+    }
+// -----------------------------------------------------------------------------
+}

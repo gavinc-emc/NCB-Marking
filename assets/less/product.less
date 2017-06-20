@@ -1,0 +1,193 @@
+body.product {
+    color: #121212;
+    // main column
+    #main {
+        padding-top: 2.5em;
+        .item-pageproduct {
+            h1 {
+                // bold 34px 56px
+                margin-top: 0;
+                font-size: 2.125em; // 34px
+                line-height: 1.647em; // 56px @ 34px
+                font-weight: @font-bold;
+                color: #003b8a;
+            }
+            .intro {
+                margin-bottom: 3em;
+                p {
+                    color: #fff;
+                    font-size: 1em; // 16px
+                    line-height: 1.625em; // 26px
+                    padding: 1.875em;
+                    background-color: #003b8a;
+                }
+            }
+            h2 {
+                // bold 18px 22px
+                font-size: 1.125em; // 18px
+                line-height: 1.222em; // 22px @ 18px
+                font-weight: @font-bold;
+                color: #003b8a;
+                margin-bottom: 1.25em;
+            }
+            p {
+                margin-bottom: 1.5em;
+            }
+            .sidebar {
+                a.enquire {
+                    margin-bottom: 1.250em;
+                    text-align: center;
+                    .grey-button;
+                    padding-left: 1.5em;
+                    padding-right: 1.5em;
+                    width: 100%;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                    &::after {
+                        .fontawesome;
+                        content: "\f0e0";
+                        font-size: 0.75em;
+                        padding-left: 1em;
+                        color: #003b8a;
+                    }
+                }
+                .product-image {
+                    border: 1px solid #f0f0f0;
+                    height: 400px;
+                    overflow: hidden;
+                    text-align: center;
+                    img {
+                        height: 100%;
+                    }
+                }
+                ul.thumb-images {
+                    .list-reset;
+                    text-align: center;
+                    li {
+                        border: 1px solid #f0f0f0;
+                        display: inline-block;
+                        width: 64px;
+                        height: 64px;
+                        overflow: hidden;
+                        margin-right: 0.625em;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .tabbed-info {
+                padding-top: 3em;
+                float: none;
+                clear: both;
+                width: 100%;
+                ul.tabs {
+                    .list-reset;
+                    li {
+                        text-align: center;
+                        background-color: #f0f0f0;
+                        padding: 1.344em 0; // 68px high
+                        &.active {
+                            background-color: #fff;
+                            font-weight: @font-bold;
+                            color: #003b8a;
+                            box-shadow: 0px 4px 9.2px 0.8px rgba(75, 75, 75, 0.07);
+                        }
+                        span {
+                            width: auto;
+                            &::before {
+                                .fontawesome;
+                                padding-right: 1em;
+                            }
+                        }
+                        &#descr span {
+                            &::before {
+                                content: "\f05a";
+                            }
+                        }
+                        &#technical span {
+                            &::before {
+                                content: "\f1c9";
+                            }
+                        }
+                        &#tables span {
+                            &::before {
+                                content: "\f0ce";
+
+                            }
+                        }
+                    }
+                }
+                div {
+                    clear: both;
+                    &.split {
+                        padding-top: 1em;
+                    }
+                    h3 {
+                        // bold 18px 22px
+                        font-size: 1.125em; // 18px
+                        line-height: 1.222em; // 22px @ 18px
+                        font-weight: @font-bold;
+                        color: #003b8a;
+                    }
+                    p {
+                        padding-top: 1em;
+                        strong {
+                            color: #003b8a;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 700px) {
+        #main {
+            .item-pageproduct {
+                .tabbed-info {
+                    ul.tabs {
+                        li {
+                            width: 33.333%;
+                            float: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1200px) {
+        #main {
+            width: 67%;
+            float: left;
+            clear: none;
+            .item-pageproduct {
+                .content {
+                    float: left;
+                    width: 55%;
+                }
+                .sidebar {
+                    width: 42%; // 400px
+                    float: right;
+                }
+                .tabbed-info {
+                    ul.tabs {
+                        li {
+                            width: 33.333%;
+                            float: left;
+                        }
+                    }
+                    div {
+                        &.split {
+                            float: left;
+                            width: 48%;
+                            clear: none;
+                             &:first-child {
+                                margin-right: 2%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

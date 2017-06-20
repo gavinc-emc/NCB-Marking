@@ -1,0 +1,296 @@
+// Sidebar (left) Styles
+
+// General variables
+// -----------------------------------------------------------------------------
+
+@sidebar-menu-border: #dfdfdf;
+
+// -----------------------------------------------------------------------------
+#left {
+    .moduletable.product-menu {
+        h3 {
+            font-size: 1.375em; // 22px
+            line-height: 1.818em; // 40px & 22px
+            color: #000;
+            margin-top: 0;
+            margin-bottom: 0.25em;
+        }
+        ul {
+            .list-reset;
+            a {
+                color: #000;
+                font-weight: @font-regular;
+            }
+        }
+        // Top level menu
+        // ---------------------------------------------------------------------
+        ul.nav.menu {
+            margin-top: 0;
+            border: 1px solid @sidebar-menu-border;
+            > li {
+                position: relative;
+                padding-left: 2em;
+                border-bottom: 1px solid @sidebar-menu-border;
+                font-size: 1.125em;
+                &.active > a {
+                    color: #053576;
+                }
+                a, li.active {
+                    display: block;
+                    padding: 1.223em;
+                    &:hover {
+                        color: #053576;
+                    }
+                }
+                &::before {
+                    height: 30px;
+                    width: 30px;
+                    position: absolute;
+                    top: 0.7em;
+                    left: 0.5em;
+                    font-size: 1.5em;
+                    color: #053576;
+                }
+                &.parent {
+                    &:before {
+                        // large plus icon
+                        background-image: url('../images/menu/menu-plus-large.png');
+                        content: '';
+                    }
+                }
+                &.active {
+                    &:before {
+                        // large minus icon
+                        background-image: url('../images/menu/menu-minus-large.png');
+                        content: '';
+                    }
+                    > ul {
+                        // show next active menu
+                        display: block;
+                    }
+                }
+                &.item-101 {
+                    // hide 'home' option
+                    display: none;
+                }
+                &:last-child {
+                    // last menu item
+                    border-bottom: 0;
+                }
+                // -------------------------------------------------------------
+
+                // Second level menu
+                // -------------------------------------------------------------
+                > ul {
+                    // hide intially
+                    display: none;
+                    > li {
+                        font-size: 1em; // 16px
+                        padding-left: 40px; // 80px @ 18px
+                        position: relative;
+                        a {
+                            padding: 0.75em;
+                        }
+                        &.active {
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            padding-left: 40px; // 80px @ 18px
+                            > a {
+                                // blue active link
+                                color: #053576;
+                            }
+                            > ul {
+                                // show next active menu
+                                display: block;
+                            }
+                        }
+                        &:before {
+                            height: 22px;
+                            width: 22px;
+                            position: absolute;
+                            top: 0.7em;
+                            left: 0.75em;
+                            font-size: 1.2em;
+                            color: #053576;
+                        }
+                        &.parent { // small plus icon
+                            &:before {
+                                background-image: url('../images/menu/menu-plus-small.png');
+                                content: '';
+                            }
+                        }
+                        &.active { // small minus icon
+                            &:before {
+                                background-image: url('../images/menu/menu-minus-small.png');
+                                content: '';
+                            }
+                        }
+                        // -----------------------------------------------------
+
+                        // Third level menu
+                        // -----------------------------------------------------
+                        > ul {
+                            // hide intially
+                            display: none;
+                            > li {
+                                position: relative;
+                                &:last-child, &:last-child a {
+                                    // last menu item
+                                    border-bottom: 0;
+                                }
+                                > a {
+                                    padding: 10px;
+                                    margin-left: 2em;
+                                    padding-left: 0;
+                                    border-bottom: 1px solid @sidebar-menu-border;
+                                }
+                                &.active {
+                                    > a {
+                                        color: #053576;
+                                        font-weight: @font-bold;
+                                        //border-bottom: none;
+                                    }
+                                    padding: 0;
+                                    &:before {
+                                        .fontawesome;
+                                        position: absolute;
+                                        top: 1.7em;
+                                        left: 1.5em;
+                                        content: "\f111";
+                                        font-size: 0.5em;
+                                        color: #c0c7cf;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .moduletable.title {
+        h1,h2,h3,h4,h5,h6 {
+            text-align: center;
+            padding: 0 20%;
+            font-size: 1.5em;
+            line-height: 1.267em;
+            font-weight: @font-regular;
+            color: #053576;
+        }
+    }
+    .custom.cta-call, .custom.cta-email {
+        width: 100%;
+        padding: 2.813em; // 45px
+    }
+    .custom.cta-call {
+        // whitespace between cta
+        margin-bottom: 1.250em; // 20px
+        p {
+            font-size: 1.625em; // 26px
+        }
+        p.phone {
+            padding-top: 0.75em;
+            font-size: 1.125em; // 18px
+        }
+        // big phone
+        &::before {
+            right: 10%;
+            font-size: 7em;
+        }
+        // small phone
+        &::after {
+            font-size: 5em;
+        }
+    }
+    .custom.cta-email {
+        p {
+            font-size: 1.625em; // 26px
+            line-height: 1em;
+        }
+        p.email {
+            padding-top: 0.75em;
+            font-size: 1.125em;
+        }
+        // big envelope
+        &::before {
+            font-size: 6em;
+        }
+        // small envelope
+        &::after {
+            font-size: 5.5em;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #left {
+        .moduletable.title {
+            h1,h2,h3,h4,h5,h6 {
+                text-align: left;
+                padding: 0;
+                font-size: 1.875em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #left {
+        // sidebar width
+        width: 31%;
+        margin-right: 2%;
+        float: left;
+        clear: none;
+        .moduletable.product-menu {
+            // Top level menu
+            // ---------------------------------------------------------------------
+            ul.nav.menu {
+                > li {
+                    padding-left: 0;
+                    > a {
+                        padding-left: 5em;
+                    }
+                    &::before {
+                        left: 1em;
+                    }
+                    // -------------------------------------------------------------
+
+                    // Second level menu
+                    // -------------------------------------------------------------
+                    > ul {
+                        > li {
+                            padding-left: 7.0em;
+                            &.active {
+                                padding-left: 7.0em;
+                            }
+                            > a {
+                                padding-left: 0;
+                            }
+                            &::before {
+                                left: 4em;
+                            }
+                            > ul {
+                                > li {
+                                    > a {
+                                        padding-left: 0;
+                                        margin-left: 2.25em;
+                                    }
+                                    &::before {
+                                        left: 4em;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .moduletable.title {
+            h1,h2,h3,h4,h5,h6 {
+                text-align: left;
+                padding: 0;
+                font-size: 1.875em;
+            }
+        }
+    }
+}
