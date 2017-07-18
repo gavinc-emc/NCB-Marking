@@ -14,8 +14,7 @@ body.home {
 // -----------------------------------------------------------------------------
     #banner {
         // mobile
-        display: inline-block;
-        width: 100%;
+        .clearfloats;
         padding: 1em 0;
         .zeninner {
             width: 100%;
@@ -26,7 +25,7 @@ body.home {
                     box-shadow: none;
                 }
                 &:after {
-                    // place transp. grid over banner image
+                    // place transp. grid overlay on J! banner image
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -54,13 +53,13 @@ body.home {
                     display: none;
                 }
                 ul {
-                    list-style: none;
-                    padding-left: 0;
+                    .list-reset;
                     li {
                         width: 100%;
                         margin-bottom: 0.5em;
                         &:first-child {
                             // Discover more
+                            text-align: center;
                             margin-right: 4%;
                             a {
                                 .blue-button;
@@ -74,6 +73,7 @@ body.home {
                         }
                         &:nth-child(2) {
                             // Enquire now
+                            text-align: center;
                             a {
                                 .grey-button;
                                 padding-left: 1.5em;
@@ -543,11 +543,8 @@ body.home {
         // mobile first
         padding: 2.5em 2em;
         ul {
-            // disable default list dots
-            list-style: none;
-            padding-left: 0;
-            display: inline-block;
-            width: 100%;
+            .list-reset;
+            .clearfloats;
             margin: 0;
             li {
                 font-size: 1em;
@@ -754,8 +751,7 @@ body.home {
         ul {
             // ind/type/func buttons
             .list-reset;
-            display: inline-block;
-            width: 100%;
+            .clearfloats;
             margin-bottom: 2em;
             li {
                 font-weight: @font-semibold;

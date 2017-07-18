@@ -102,15 +102,15 @@ jQuery(document).ready(function() {
     	    nav: true,
     	    dots: true,
     	    responsive:{
-    	        0:{
+    	        0: {
     	            items:1,
     	            slideBy:1
     	        },
-    	        800:{
+    	        800: {
     	            items:2,
     	            slideBy:2
     	        },
-    	        1200:{
+    	        1200: {
     	            items:3,
     	            slideBy:3
     	        }
@@ -128,18 +128,18 @@ jQuery(document).ready(function() {
             margin: 30,
             nav: true,
             dots: true,
-            responsive:{
+            responsive: {
                 0:{
-                    items:1,
-                    slideBy:1
+                    items: 1,
+                    slideBy: 1
                 },
                 800:{
-                    items:2,
-                    slideBy:2
+                    items: 2,
+                    slideBy: 2
                 },
                 1200:{
-                    items:3,
-                    slideBy:3
+                    items: 3,
+                    slideBy: 3
                 }
             }
         })
@@ -179,5 +179,26 @@ jQuery(document).ready(function() {
         jQuery(this).addClass('active');
         jQuery('.panel.tables').fadeIn();
     });
+
+    // Replace product thumb images into main product image on hover
+    if (jQuery('body.product .sidebar').length > 0) {
+        var elem = jQuery(this); // locate the area of the page with the product images
+        var fullProductImage = elem.find('.product-image img'); // find the full product image
+        elem.find('.thumb-images li img').on("mouseover", function() {
+            // if we have at least one thumbnail...
+            var thumbProductImage       = jQuery(this); // identify which thumb image it is we're currently hovering
+            var thisThumbProductImage   = thumbProductImage.attr('src'); // fetch the thumb src
+            var currentFullProductImage = fullProductImage.attr('src'); // fetch the current src of the full size image
+            // if the thumb image is different to the main image...
+            if ( currentFullProductImage != thisThumbProductImage ) {
+                // fade out the image / switch the img tag src+alt / fade in the new image
+                fullProductImage.fadeOut(200, function() {
+                    fullProductImage.attr("src", thumbProductImage.attr('src'));
+                    fullProductImage.attr("alt", thumbProductImage.attr('alt'));
+                })
+                fullProductImage.fadeIn(200);
+            }
+        });
+    }
 
 });

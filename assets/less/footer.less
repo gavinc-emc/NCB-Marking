@@ -28,11 +28,17 @@
         ul {
             .list-reset;
             margin: 0;
-            columns: 2;
             color: @footer-text;
             font-size: 1.125em;
             padding-bottom: 1.5em;
+                // li floats fix
+                display: inline-block;
+                width: 100%;
             li {
+                // floaty items
+                width: 50%;
+                float: left;
+                clear: none;
                 a {
                     display: inline-block;
                     font-weight: normal;
@@ -48,7 +54,9 @@
     @media screen and (min-width: 600px) {
         #bottom1 {
             ul {
-                columns: 3;
+                li {
+                    width: 33%;
+                }
             }
         }
     }
@@ -59,7 +67,9 @@
             clear: none;
             ul {
                 padding-bottom: 0;
-                columns: 2;
+                li {
+                    width: 50%;
+                }
             }
         }
     }
@@ -69,9 +79,9 @@
             float: left;
             clear: none;
             ul {
-                columns: 3;
                 padding-bottom: 0;
                 li {
+                    width: 33%;
                     a {
                         padding: 1rem 0;
                     }
@@ -140,10 +150,9 @@
             .white-button;
             text-align: center;
             display: block;
-            max-width: 262px;
             margin: 0 auto;
             padding: 0.695em 1.223em; // 262 x 50px
-            &::after {
+            &:after {
                 .fontawesome;
                 content: "\f0e0";
                 padding-left: 2.688em;
@@ -201,7 +210,7 @@
         width: 100%;
         max-width: none;
         color: @footer-text;
-        padding: 1.5em ; //2.188em 0; // 35px
+        padding: 1.5em 0; //2.188em 0; // 35px
         background-color: @footer-bg2;
         margin-bottom: 0;
         .moduletable {

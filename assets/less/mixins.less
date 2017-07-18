@@ -8,7 +8,10 @@
     color: #121212;
     font-weight: bold;
     background-color: #fff;
-    &::after {
+    &:hover {
+        opacity: 0.8;
+    }
+    &:after {
         color: #003b8a;
     }
 }
@@ -19,6 +22,9 @@
     font-weight: bold;
     background-color: #003b8a;
     padding: .75em 2.625em;
+    &:hover {
+        opacity: 0.8;
+    }
 }
 .grey-button {
     display: inline-block;
@@ -27,23 +33,42 @@
     background-color: #f0f0f0;
     font-weight: bold;
     padding: .75em 2.625em;
+    &:hover {
+        opacity: 0.8;
+    }
 }
-.vertical-center {
-    // set container to position: relative first
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.list-reset {
-    list-style: none;
-    padding-left: 0;
-}
-.id(@color: red) {
-    border: 1px solid @color;
-}
+
 .facebook-icon   { content: "\f09a" }
 .linkedin-icon   { content: "\f0e1" }
 .googleplus-icon { content: "\f0d5" }
 .youtube-icon    { content: "\f167" }
 .youtube2-icon   { content: "\f16a" }
 .twitter-icon    { content: "\f099" }
+
+// Toolbox
+.vertical-center {
+    // !! set container to position: relative !!
+    position: absolute;
+    // set top of object to be 50% down
+    top: 50%;
+    // move object UP half its own height
+    transform: translateY(-50%);
+}
+.list-reset {
+    // no dots and no padding
+    list-style: none;
+    padding-left: 0;
+}
+.clearfloats {
+    // make container of floaty items full height again
+    display: inline-block;
+    width: 100%;
+}
+.id(@color: red) {
+    // identify element with border of supplied colour (red as default)
+    // usage examples:
+    // .id;
+    // .id();
+    // .id(orange);
+    border: 1px solid @color;
+}
